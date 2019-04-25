@@ -144,8 +144,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-function each (names, callback){
-  
+var names = ['Curt', 'Ryan']
+function each (array, callback){
+for (var i = 0; i < array.length; i++){
+  callback(array[i], i)
+}
 }
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -163,7 +166,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+function getUserById (array, id, callback) {
+  for (i = 0; i < array.length; i++) {
+    if (id === array[i].id) {
+      return callback(array[i])
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
