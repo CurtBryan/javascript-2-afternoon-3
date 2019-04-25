@@ -26,7 +26,9 @@
   Write a function called first that takes in two parameters, an array and a callback function.
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
-
+function first (array, callback){
+  return callback(array[0])
+}
 // Code Here 
 
 // Do not edit the code below.
@@ -48,7 +50,9 @@ first(names, function(firstName){
 */
 
 //Code Here
-
+function last (array, callback){
+  return callback (array [array.length - 1])
+}
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,6 +70,9 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply (num1, num2, callback){
+  return callback (num1 * num2)
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -83,7 +90,13 @@ multiply(4, 3, function(answer){
   If it does, invoke the callback with true as the argument. 
   If the name does not exist, invoke the callback with false as the argument.
 */
-
+function contains (array, name, callback) {
+  if(array.includes(name)){
+    callback(true);
+  } else {
+    callback(false);
+  } 
+}
 //Code Here 
 
 // Do not edit the code below.
@@ -106,7 +119,15 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-
+function uniq (array, callback) {
+  let uniqArray = [];
+  for (i=0; i < array.length; i++){
+    if (uniqArray.indexOf(array[i])=== -1){
+      uniqArray.push(array[i])
+    }
+  }
+  callback(uniqArray)
+}
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -123,7 +144,9 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-
+function each (names, callback){
+  
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
